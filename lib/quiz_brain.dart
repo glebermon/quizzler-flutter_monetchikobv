@@ -1,4 +1,5 @@
 import 'question.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class QuizBrain {
   int _questionNumber = 0;
@@ -44,5 +45,14 @@ class QuizBrain {
 
   bool getCorrectAnswer() {
     return _questions[_questionNumber].questionAnswer;
+  }
+
+  bool checkLength() {
+    if (_questionNumber == _questions.length - 1) {
+      _questionNumber = 0;
+      return true;
+    } else {
+      return false;
+    }
   }
 }
